@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
 import pages.RegisterPage.RegisterPage;
 import tests.BaseTest;
 
-import static pages.BasePage.driver;
-import static pages.BasePage.getBaseUrl;
+import static pages.BasePage.*;
 
 public class RegisterTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(RegisterPage.class);
@@ -51,6 +50,15 @@ public class RegisterTest extends BaseTest {
         LOG.info("Select Birth Date");
         registerPage.birthDate(year,month,day);
         registerPage.firstPasswordKey(firstpassword1,secoundpassword1);
+
+
+
+        LOG.info("Upload File");
+        registerPage.uploadFile();
+
+
+        LOG.info("Click on 'Submit' button ");
+        registerPage.clickSubmitB();
 
     }
 }

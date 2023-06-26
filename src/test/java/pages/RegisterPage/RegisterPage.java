@@ -3,6 +3,7 @@ package pages.RegisterPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +47,8 @@ public class RegisterPage extends BasePage {
     private By birthDay = By.id("daybox");
     private By firstPassword = By.id("firstpassword");
     private By secondPassword = By.id("secondpassword");
+    private By choosefile=By.id("imagesrc");
+    private By  submitBTN=By.id("submitbtn");
 
 
 
@@ -146,8 +149,28 @@ public class RegisterPage extends BasePage {
         LOG.info("Enter First password");
         driver.findElement(firstPassword).sendKeys(password);
         driver.findElement(secondPassword).sendKeys(confrimPassowrd);
+    }
+
+
+    public void  uploadFile () {
+
+        LOG.info("Click on 'Choose File' button ");
+        WebElement chooseFile2=driver.findElement(choosefile);
+        chooseFile2.sendKeys("C:\\Users\\relu_\\Desktop\\javaphoto.png");
+    }
+
+    public void clickSubmitB () {
+
+        LOG.info("Click Submit button");
+        driver.findElement(submitBTN).click();
 
     }
+
+
+
+
+
+
 
 
 
